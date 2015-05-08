@@ -1,0 +1,17 @@
+# Site settings
+title: Browser Surprise
+header-img: img/home-bg.jpg
+email: amitamb@gmail.com
+description: "Blog posts about surprises browser throws at you including CSS, JS and other anomalies."
+baseurl: ""
+url: "http://browsersurprise.github.io"
+twitter_username: amitamb
+github_username:  amitamb
+facebook_username:  amitambardekar
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
