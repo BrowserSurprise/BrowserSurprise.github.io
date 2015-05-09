@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Blog posts about surprises browser throws at you including CSS, JS and other anomalies.">
 
-    <title>Man must explore, and this is exploration at its greatest - Browser Surprise</title>
+    <title>Communicating across sub-domains/ports in iframes - Browser Surprise</title>
 
-    <link rel="canonical" href="http://browsersurprise.github.io/2014/09/24/man-must-explore/">
+    <link rel="canonical" href="http://browsersurprise.github.io/2015/05/09/whats-up-with-document-domain-equal-to-document-domain/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -81,11 +81,11 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Man must explore, and this is exploration at its greatest</h1>
+                    <h1>Communicating across sub-domains/ports in iframes</h1>
                     
-                    <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+                    <h2 class="subheading">Why setting document.domain = document.domain make it work?</h2>
                     
-                    <span class="meta">Posted by Start Bootstrap on September 24, 2014</span>
+                    <span class="meta">Posted by Amit Ambardekar on May 9, 2015</span>
                 </div>
             </div>
         </div>
@@ -98,40 +98,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+				<p>This port is going to be short and I won't be contributing much bbut this is the quote.</p>
 
-<p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+<blockquote cite="http://stackoverflow.com/questions/1481251/what-does-document-domain-document-domain-do">
+When trying to do cross-subdomain/port comet, the iframe needs to have the same document.domain value as the parent frame. Unfortunately, the browser stores the domain name AND port internally for the original document.domain value. But the getter and setter in javascript knows nothing about the port. So the problem is this: if the top frame document.domain is ('example.com', 80), and the bottom frame is ('comet.example.com', 80), how do you get the bottom frame to be ('example.com', 80) as well?
+<br />
+You can't, as changing the hostname portion will necessarily cause the port to be set to null, so the best you can do is ('example.com', null) in the bottom frame. So the top frame also needs to be set to that value, and setting document.domain=document.domain does just that. It changes the internal representation in the browser from ('example.com', 80) to ('example.com', null) and then everything matches up and cross-port/subdomain frame communication works.
+</blockquote>
 
-<p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
-
-<p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
-
-<p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
-
-<h2 class="section-heading">The Final Frontier</h2>
-
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-<blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
-
-<p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-
-<h2 class="section-heading">Reaching for the Stars</h2>
-
-<p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-<p><a href="#">
-    <img src="/img/post-sample-image.jpg" alt="Post Sample Image" />
-</a>
-<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span></p>
-
-<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-<p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+<p>
+  Source: <a href="http://stackoverflow.com/questions/1481251/what-does-document-domain-document-domain-do">http://stackoverflow.com/questions/1481251/what-does-document-domain-document-domain-do</a>
+</p>
 
 
                 <hr>
@@ -139,13 +116,9 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2014/09/18/i-believe/" data-toggle="tooltip" data-placement="top" title="I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.">&larr; Previous Post</a>
+                        <a href="/2014/09/24/man-must-explore/" data-toggle="tooltip" data-placement="top" title="Man must explore, and this is exploration at its greatest">&larr; Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2015/05/09/whats-up-with-document-domain-equal-to-document-domain/" data-toggle="tooltip" data-placement="top" title="Communicating across sub-domains/ports in iframes">Next Post &rarr;</a>
-                    </li>
                     
                 </ul>
 
